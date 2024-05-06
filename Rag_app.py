@@ -38,6 +38,6 @@ query_engine = SubQuestionQueryEngine.from_defaults(query_engine_tools = query_e
 
 # Process the query and get the response
 response = query_engine.query(
-    "How was Paul Grahams life different before, during, and after YC?"
+    "What was the yearly revenue of pepsico from year 1995 to year 2023?"
     )
 print(response)
