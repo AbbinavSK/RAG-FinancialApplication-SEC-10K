@@ -1,0 +1,5 @@
+sec-edgar-downloader
+python-dotenv
+llama-index
+llama-index-embeddings-google
+llama-index-llms-palm

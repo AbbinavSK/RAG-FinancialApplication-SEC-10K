@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: llama-index-embeddings-google
+Version: 0.1.5
+Summary: llama-index embeddings google integration
+License: MIT
+Author: Your Name
+Author-email: you@example.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: tensorflow
+Requires-Dist: google-generativeai (>=0.4.1,<0.5.0)
+Requires-Dist: llama-index-core (>=0.10.11.post1,<0.11.0)
+Requires-Dist: tensorflow-hub (>=0.15.0,<0.16.0) ; extra == "tensorflow"
+Description-Content-Type: text/markdown
+
+# LlamaIndex Embeddings Integration: Google
+
