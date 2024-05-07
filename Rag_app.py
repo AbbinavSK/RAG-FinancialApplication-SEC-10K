@@ -9,15 +9,15 @@ from llama_index.llms.palm import PaLM
 from llama_index.embeddings.google import GooglePaLMEmbedding
 
 # Add the Palm API key into the environment
-os.environ['PALM_API_KEY'] = os.getenv("PALM_API_KEY")
+os.environ['PALM_API_KEY'] = "AIzaSyDfjMWDcmm8DnOse3VeqknwQbih6Yb6uKI"
 
 # Load the documents
-documents = SimpleDirectoryReader("data").load_data()
+documents = SimpleDirectoryReader("/workspaces/RAG-FinancialApplication-SEC-10K/data").load_data()
 print("Successfully Loaded", len(documents), "documents !!")
 
 # Create the word to vector index and vector query engine
 llm = PaLM()
-embed_model = GooglePaLMEmbedding(model="models/embedding-gecko-001", embed_batch_size=100)
+embed_model = GooglePaLMEmbedding(model="models/embedding-gecko-001", embed_batch_size=1000)
 vector_query_engine = VectorStoreIndex.from_documents(documents, embed_model = embed_model, show_progress=True).as_query_engine(llm = llm)
 print("Successfully created vector indices !!")
 
@@ -33,11 +33,11 @@ query_engine_tools = [
     ]
 
 query_engine = SubQuestionQueryEngine.from_defaults(query_engine_tools = query_engine_tools, 
-                                                    llm = llm, 
-                                                    use_async=True)
+                                                    llm = llm)
 
 # Process the query and get the response
 response = query_engine.query(
-    "What was the yearly revenue of pepsico from year 1995 to year 2023?"
+    """Your are an accountant and you are going to analyse the financials for Apple and Pepsico 
+    using the SEC 10-K documents."""
     )
 print(response)
