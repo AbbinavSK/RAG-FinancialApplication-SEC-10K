@@ -9,7 +9,7 @@ from llama_index.embeddings.google import GooglePaLMEmbedding
 
 # Add the Palm API key into the environment
 os.environ['PALM_API_KEY'] = "ENTER_PALM_API_KEY"
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] ='AppData\Roaming\gcloud\application_default_credentials.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] ='PATH_TO_application_default_credentials.json'
 
 # Load the documents
 documents = SimpleDirectoryReader("data").load_data()
